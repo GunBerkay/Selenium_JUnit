@@ -46,6 +46,7 @@ public class C04_BagimliGorevler {
     @Test
     public void test03(){
         // 3- ilk urunu tiklayip, acilan sayfadaki urun isminde
+        //    case sensitive olmadan "phone" bulundugunu test edin
 
     }
 
