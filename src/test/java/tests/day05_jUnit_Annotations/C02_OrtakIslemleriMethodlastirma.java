@@ -1,21 +1,28 @@
 package tests.day05_jUnit_Annotations;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C01_CokluTestOlusturma {
+public class C02_OrtakIslemleriMethodlastirma {
+
+    WebDriver driver;
+
+    public void setup(){
+        driver=new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
+
+    public void teardown(){
+        driver.quit();
+    }
 
     @Test
     public void testotomasyonuTesti(){
-
-        WebDriver driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
+        setup();
         // 3 farkli method olusturup asagidaki gorevleri yapin
         // 1- testotomasyonu sayfasina gidin ve url'in testotomasyonu icerdigini test edin
         driver.get("https://www.testotomasyonu.com");
@@ -25,17 +32,12 @@ public class C01_CokluTestOlusturma {
         if (actualUrl.contains(expectedUrlIcerik)){
             System.out.println("Testotomasyonu testi PASSED");
         }else System.out.println("Testotomasyonu testi FAILED");
-
-        driver.quit();
+        teardown();
     }
 
     @Test
     public void youtubeTesti(){
-
-        WebDriver driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
+        setup();
         // 2- youtube ana sayfaya gidin ve Title'in YouTube oldugunu test edin
 
         driver.get("https://www.youtube.com");
@@ -46,17 +48,13 @@ public class C01_CokluTestOlusturma {
         if (expectedTitle.equalsIgnoreCase(actualTitle)){
             System.out.println("Youtube testi PASSED");
         }else System.out.println("Youtube testi FAILED");
+        teardown();
 
-        driver.quit();
     }
 
     @Test
     public void wisequarterTesti(){
-
-        WebDriver driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
+        setup();
         // 3- wisequarter anasayfaya gidin ve Title'in case sensitive olmadan wisequarter icerdigini test edin
         driver.get("https://www.wisequarter.com");
 
@@ -66,9 +64,10 @@ public class C01_CokluTestOlusturma {
         if (actualTitle.contains(expectedTitleIcerik)){
             System.out.println("Wisequarter testi PASSED");
         }else System.out.println("Wisequarter testi FAILED");
-
-        driver.quit();
+        teardown();
 
     }
+
+
 
 }
