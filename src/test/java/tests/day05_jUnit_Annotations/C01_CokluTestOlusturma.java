@@ -64,6 +64,7 @@ public class C01_CokluTestOlusturma {
         }else System.out.println("Wisequarter testi FAILED");
 
         driver.quit();
+        System.out.println("be");
 
     }
 
