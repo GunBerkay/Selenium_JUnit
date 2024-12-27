@@ -18,9 +18,9 @@ public class TestBase_Each {
         driver.manage().window().maximize();
     }
 
-    @AfterEach
-    public void tearDown(){
-        driver.quit();
-    }
+//    @AfterEach
+//    public void tearDown(){
+//        driver.quit();
+//    }
 
 }
