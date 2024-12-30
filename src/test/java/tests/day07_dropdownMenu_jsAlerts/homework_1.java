@@ -10,7 +10,7 @@ import utilities.TestBase_Each;
 public class homework_1 extends TestBase_Each {
 
     @Test
-    public void test(){
+    public void test() {
 //        1. http://zero.webappsecurity.com/ Adresine gidin
         driver.get("http://zero.webappsecurity.com/");
 
@@ -42,8 +42,8 @@ public class homework_1 extends TestBase_Each {
                 .click();
 
 //        8. “Currency” drop down menusunden Eurozone’u secin
-        WebElement currencyDdm= driver.findElement(By.xpath("//select[@id='pc_currency']"));
-        Select select =new Select(currencyDdm);
+        WebElement currencyDdm = driver.findElement(By.xpath("//select[@id='pc_currency']"));
+        Select select = new Select(currencyDdm);
         select.selectByValue("EUR");
 
 //        9. “amount” kutusuna bir sayi girin
@@ -51,7 +51,7 @@ public class homework_1 extends TestBase_Each {
                 .sendKeys("50");
 
 //        10. “US Dollars” in secilmedigini test edin
-        WebElement radioDollars= driver.findElement(By.xpath("//input[@id='pc_inDollars_true']"));
+        WebElement radioDollars = driver.findElement(By.xpath("//input[@id='pc_inDollars_true']"));
         Assertions.assertFalse(radioDollars.isSelected());
 
 //        11. “Selected currency” butonunu secin
@@ -66,7 +66,7 @@ public class homework_1 extends TestBase_Each {
 
 //        13. “Foreign currency cash was successfully purchased.” yazisinin ciktigini
 //        kontrol edin.
-        WebElement actualtext= driver.findElement(By.xpath("//div[text()='Foreign currency cash was successfully purchased.']"));
+        WebElement actualtext = driver.findElement(By.xpath("//div[text()='Foreign currency cash was successfully purchased.']"));
         Assertions.assertTrue(actualtext.isDisplayed());
 
     }
