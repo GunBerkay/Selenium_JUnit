@@ -16,7 +16,6 @@ public class C07_MoveToElement extends TestBase_Each {
         //1- https://www.testotomasyonu.com/ adresine gidin
         driver.get("https://www.testotomasyonu.com/");
 
-
         //2- “Kids Wear” menusunun acilmasi icin mouse’u bu menunun ustune getirin
         WebElement kidsWearElementi = driver.findElement(By.xpath("(//a[text()='Kids Wear'])[3]"));
         actions.moveToElement(kidsWearElementi)
@@ -38,11 +37,6 @@ public class C07_MoveToElement extends TestBase_Each {
         String actualUrunIsmi = isimElementi.getText();
 
         Assertions.assertEquals(expectedUrunIsmi,actualUrunIsmi);
-
-
-
-
-
 
     }
 

@@ -17,7 +17,6 @@ public class ReusableMethods {
         }
     }
 
-
     public static List<String> stringListeDonustur(List<WebElement> webElementList){
 
         List<String> stringList = new ArrayList<>();
@@ -37,7 +36,6 @@ public class ReusableMethods {
             }
         }
     }
-
 
     public static void urlIleWindowGecisi(WebDriver driver,String hedefWindowUrl){
 
