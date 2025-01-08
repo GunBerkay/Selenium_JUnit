@@ -18,6 +18,7 @@ public class C03_FakerClass extends TestBase_Each {
 
         System.out.println(faker.internet().emailAddress());
         System.out.println(faker.internet().password());
+        
 
 
     }
