@@ -10,12 +10,12 @@ import utilities.TestBase_Each;
 import java.io.File;
 import java.io.IOException;
 
-public class C01_EkranGoruntusuKaydetme extends TestBase_Each {
+public class C03_WebElementScreenshot extends TestBase_Each {
 
     @Test
     public void test01() throws IOException {
 
- // 1- testotomasyonu anasayfaya gidip,
+        // 1- testotomasyonu anasayfaya gidip,
         driver.get("https://www.testotomasyonu.com");
 // url'in testotomasyonu icerdigini test edin
         String expectedUrlIcerik = "testotomasyonu";
@@ -50,20 +50,19 @@ public class C01_EkranGoruntusuKaydetme extends TestBase_Each {
         ReusableMethods.bekle(1);
         Assertions.assertTrue(actualIsim.contains(expectedIsimIcerik));
 
-        //1.ADIM
-        TakesScreenshot takesScreenshot= (TakesScreenshot) driver;
+        // 1.ADIM
 
-        //2.ADIM
-        File asilResim=new File("target/screenshots/tumSayfaScreenshot.jpg");
-
-        //3.ADIM
-        File geciciResim=takesScreenshot.getScreenshotAs(OutputType.FILE);
-
-        //4.ADIM
+        // 2.ADIM
+        File asilResim=new File("target/screenshots/webelementScreenshot.jpg");
+        // 3.ADIM
+        File geciciResim = isimElementi.getScreenshotAs(OutputType.FILE);
+        // 4.ADIM
         FileUtils.copyFile(geciciResim,asilResim);
+
+        ReusableMethods.webElementScreenshoot(isimElementi);
+
 
         driver.quit();
 
     }
-
 }
